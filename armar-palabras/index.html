@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Armá palabras con sílabas 🔤</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Fredoka+One&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <span class="bounce-icon">🔤</span>
+    <h1>Armá palabras</h1>
+    <span class="bounce-icon" style="animation-delay:.6s">✏️</span>
+  </div>
+  <p class="subtitle">Hacé clic en una sílaba de cada columna y en la imagen para formar la palabra correcta</p>
+</header>
+
+<!-- SCORE BAR -->
+<div class="score-bar">
+  <div class="score-pill">
+    <span class="score-icon">⭐</span>
+    <span id="score-text">0 / 9 palabras</span>
+  </div>
+  <button class="btn-reset" onclick="resetAll()">🔄 Reiniciar</button>
+</div>
+
+<main>
+  <div class="game-area">
+
+    <!-- COLUMNA 1: sílabas A -->
+    <div class="col-silabas col-a" id="col-a">
+      <div class="col-header">1ª sílaba</div>
+    </div>
+
+    <!-- COLUMNA 2: sílabas B -->
+    <div class="col-silabas col-b" id="col-b">
+      <div class="col-header">2ª sílaba</div>
+    </div>
+
+    <!-- COLUMNA 3: palabra formada -->
+    <div class="col-center">
+      <div class="col-header">Palabra</div>
+      <div class="word-slots" id="word-slots"></div>
+    </div>
+
+    <!-- COLUMNA 4: imágenes -->
+    <div class="col-images" id="col-images">
+      <div class="col-header">Imagen</div>
+    </div>
+
+  </div>
+</main>
+
+<!-- CELEBRACIÓN -->
+<div id="celebration" class="celebration hidden">
+  <div class="celebration-box">
+    <div class="cel-emoji">🎉</div>
+    <h2>¡Felicitaciones!</h2>
+    <p>Armaste todas las palabras correctamente.</p>
+    <button class="btn-play-again" onclick="resetAll()">🔄 Jugar de nuevo</button>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

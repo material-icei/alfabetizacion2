@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Inventá tu cuento ✨</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Fredoka+One&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  <header>
+    <div class="header-inner">
+      <span class="star-anim">⭐</span>
+      <h1>Inventá tu cuento</h1>
+      <span class="star-anim" style="animation-delay:1s">⭐</span>
+    </div>
+    <p class="subtitle">Elegí un personaje, un lugar y un objeto… ¡y creá tu propio cuento!</p>
+  </header>
+
+  <main>
+
+    <!-- DATOS DEL ALUMNO -->
+    <section class="card-section datos-section">
+      <div class="datos-grid">
+        <div class="dato-field">
+          <label class="write-label" for="nombre">Nombre:</label>
+          <input id="nombre" class="story-input" type="text" placeholder="Escribí tu nombre...">
+        </div>
+        <div class="dato-field">
+          <label class="write-label" for="curso">Curso:</label>
+          <input id="curso" class="story-input" type="text" placeholder="Ej: 2A">
+        </div>
+        <div class="dato-field dato-titulo">
+          <label class="write-label" for="titulo">Título del cuento:</label>
+          <input id="titulo" class="story-input" type="text" placeholder="Inventá un título para tu cuento... ✨">
+        </div>
+      </div>
+    </section>
+
+    <!-- SELECTOR DE ELEMENTOS -->
+    <section class="card-section selector-section">
+      <h2 class="section-title">🎲 Paso 1: Elegí los elementos de tu cuento</h2>
+
+      <div class="selector-grid">
+
+        <!-- PERSONAJES -->
+        <div class="selector-col">
+          <div class="selector-header sh-personaje">👤 Personaje</div>
+          <div class="selector-items" id="sel-personaje">
+            <button class="elem-btn" data-group="personaje" data-value="el niño" data-emoji="👦">
+              <span class="elem-emoji">👦</span>
+              <span class="elem-name">el niño</span>
+            </button>
+            <button class="elem-btn" data-group="personaje" data-value="la niña" data-emoji="👧">
+              <span class="elem-emoji">👧</span>
+              <span class="elem-name">la niña</span>
+            </button>
+            <button class="elem-btn" data-group="personaje" data-value="la bruja" data-emoji="🧙‍♀️">
+              <span class="elem-emoji">🧙‍♀️</span>
+              <span class="elem-name">la bruja</span>
+            </button>
+            <button class="elem-btn" data-group="personaje" data-value="el hada" data-emoji="🧚‍♀️">
+              <span class="elem-emoji">🧚‍♀️</span>
+              <span class="elem-name">el hada</span>
+            </button>
+            <button class="elem-btn" data-group="personaje" data-value="el dragón azul" data-emoji="🐲">
+              <span class="elem-emoji">🐲</span>
+              <span class="elem-name">el dragón azul</span>
+            </button>
+            <button class="elem-btn" data-group="personaje" data-value="el dragón verde" data-emoji="🦕">
+              <span class="elem-emoji">🦖</span>
+              <span class="elem-name">el dragón verde</span>
+            </button>
+          </div>
+          <div class="selected-display" id="disp-personaje">
+            <span class="disp-empty">Ninguno elegido</span>
+          </div>
+        </div>
+
+        <!-- LUGARES -->
+        <div class="selector-col">
+          <div class="selector-header sh-lugar">📍 Lugar</div>
+          <div class="selector-items" id="sel-lugar">
+            <button class="elem-btn" data-group="lugar" data-value="el bosque" data-emoji="🌳">
+              <span class="elem-emoji">🌳</span>
+              <span class="elem-name">el bosque</span>
+            </button>
+            <button class="elem-btn" data-group="lugar" data-value="la montaña" data-emoji="⛰️">
+              <span class="elem-emoji">⛰️</span>
+              <span class="elem-name">la montaña</span>
+            </button>
+            <button class="elem-btn" data-group="lugar" data-value="el castillo" data-emoji="🏰">
+              <span class="elem-emoji">🏰</span>
+              <span class="elem-name">el castillo</span>
+            </button>
+            <button class="elem-btn" data-group="lugar" data-value="la cueva" data-emoji="🪨">
+              <span class="elem-emoji">🪨</span>
+              <span class="elem-name">la cueva</span>
+            </button>
+            <button class="elem-btn" data-group="lugar" data-value="la casa del hongo" data-emoji="🍄">
+              <span class="elem-emoji">🍄</span>
+              <span class="elem-name">casa del hongo</span>
+            </button>
+            <button class="elem-btn" data-group="lugar" data-value="el río del bosque" data-emoji="🏞️">
+              <span class="elem-emoji">🏞️</span>
+              <span class="elem-name">el río del bosque</span>
+            </button>
+          </div>
+          <div class="selected-display" id="disp-lugar">
+            <span class="disp-empty">Ninguno elegido</span>
+          </div>
+        </div>
+
+        <!-- OBJETOS -->
+        <div class="selector-col">
+          <div class="selector-header sh-objeto">🎁 Objeto</div>
+          <div class="selector-items" id="sel-objeto">
+            <button class="elem-btn" data-group="objeto" data-value="una poción mágica" data-emoji="🧪">
+              <span class="elem-emoji">🧪</span>
+              <span class="elem-name">una poción mágica</span>
+            </button>
+            <button class="elem-btn" data-group="objeto" data-value="una varita mágica" data-emoji="⭐">
+              <span class="elem-emoji">🪄</span>
+              <span class="elem-name">una varita mágica</span>
+            </button>
+            <button class="elem-btn" data-group="objeto" data-value="una espada" data-emoji="⚔️">
+              <span class="elem-emoji">⚔️</span>
+              <span class="elem-name">una espada</span>
+            </button>
+            <button class="elem-btn" data-group="objeto" data-value="un amuleto" data-emoji="🔮">
+              <span class="elem-emoji">🔮</span>
+              <span class="elem-name">un amuleto</span>
+            </button>
+            <button class="elem-btn" data-group="objeto" data-value="un libro misterioso" data-emoji="📖">
+              <span class="elem-emoji">📖</span>
+              <span class="elem-name">un libro misterioso</span>
+            </button>
+            <button class="elem-btn" data-group="objeto" data-value="una llave antigua" data-emoji="🗝️">
+              <span class="elem-emoji">🗝️</span>
+              <span class="elem-name">una llave antigua</span>
+            </button>
+          </div>
+          <div class="selected-display" id="disp-objeto">
+            <span class="disp-empty">Ninguno elegido</span>
+          </div>
+        </div>
+
+      </div><!-- fin selector-grid -->
+
+      <!-- RESUMEN DE SELECCIÓN -->
+      <div class="selection-summary" id="summary">
+        <div class="summary-inner" id="summary-inner">
+          <span class="summary-placeholder">Elegí un personaje, un lugar y un objeto para empezar 👆</span>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ESCRITURA DEL CUENTO -->
+    <div class="story-table" id="story-table">
+
+      <!-- INICIO -->
+      <section class="story-row" id="row-inicio">
+        <div class="col-image">
+          <div class="part-badge badge-inicio">1. Inicio</div>
+          <div class="part-visual pv-inicio">
+            <div class="part-icon-big" id="icon-inicio">🌅</div>
+          </div>
+          <div class="image-caption">¿Quién es el personaje?<br>¿Dónde está? ¿Qué hace?</div>
+        </div>
+        <div class="col-write">
+          <div class="suggestions-box sb-inicio">
+            <div class="sug-title">💡 Sugerencias para empezar:</div>
+            <div class="sug-chips" id="chips-inicio">
+              <button class="chip" data-target="ta-inicio" data-text="Había una vez ">Había una vez...</button>
+              <button class="chip" data-target="ta-inicio" data-text="Una mañana soleada, ">Una mañana...</button>
+              <button class="chip" data-target="ta-inicio" data-text="Érase una vez ">Érase una vez...</button>
+              <button class="chip" data-target="ta-inicio" data-text="Todo empezó cuando ">Todo empezó cuando...</button>
+              <button class="chip chip-dynamic" data-target="ta-inicio" data-text="" id="chip-auto-inicio">🪄 Usar mis elementos</button>
+            </div>
+          </div>
+          <label class="write-label" for="ta-inicio">Escribí el <strong>inicio</strong> de tu cuento:</label>
+          <textarea id="ta-inicio" class="story-area ta-inicio" placeholder="Empezá a escribir aquí..." rows="5"></textarea>
+          <div class="word-count"><span id="wc-inicio">0</span> palabras</div>
+        </div>
+      </section>
+
+      <div class="row-divider">
+        <div class="divider-line"></div>
+        <span class="divider-icon">📖</span>
+        <div class="divider-line"></div>
+      </div>
+
+      <!-- CONFLICTO -->
+      <section class="story-row" id="row-conflicto">
+        <div class="col-image">
+          <div class="part-badge badge-conflicto">2. Conflicto</div>
+          <div class="part-visual pv-conflicto">
+            <div class="part-icon-big">⚡</div>
+          </div>
+          <div class="image-caption">¿Qué problema apareció?<br>¿Qué pasó de repente?</div>
+        </div>
+        <div class="col-write">
+          <div class="suggestions-box sb-conflicto">
+            <div class="sug-title">💡 Sugerencias para continuar:</div>
+            <div class="sug-chips" id="chips-conflicto">
+              <button class="chip" data-target="ta-conflicto" data-text="Entonces, de repente, ">Entonces...</button>
+              <button class="chip" data-target="ta-conflicto" data-text="Después de unos minutos, ">Después de unos minutos...</button>
+              <button class="chip" data-target="ta-conflicto" data-text="Pero el problema fue que ">Pero el problema fue...</button>
+              <button class="chip" data-target="ta-conflicto" data-text="De pronto, sin que nadie lo esperara, ">De pronto...</button>
+              <button class="chip" data-target="ta-conflicto" data-text="Lo que pasó después sorprendió a todos: ">Lo que pasó después...</button>
+            </div>
+          </div>
+          <label class="write-label" for="ta-conflicto">Escribí el <strong>conflicto</strong> de tu cuento:</label>
+          <textarea id="ta-conflicto" class="story-area ta-conflicto" placeholder="¿Qué problema apareció?" rows="5"></textarea>
+          <div class="word-count"><span id="wc-conflicto">0</span> palabras</div>
+        </div>
+      </section>
+
+      <div class="row-divider">
+        <div class="divider-line"></div>
+        <span class="divider-icon">📖</span>
+        <div class="divider-line"></div>
+      </div>
+
+      <!-- DESENLACE -->
+      <section class="story-row" id="row-desenlace">
+        <div class="col-image">
+          <div class="part-badge badge-desenlace">3. Desenlace</div>
+          <div class="part-visual pv-desenlace">
+            <div class="part-icon-big">🌈</div>
+          </div>
+          <div class="image-caption">¿Cómo se resolvió?<br>¿Cómo terminó la historia?</div>
+        </div>
+        <div class="col-write">
+          <div class="suggestions-box sb-desenlace">
+            <div class="sug-title">💡 Sugerencias para terminar:</div>
+            <div class="sug-chips" id="chips-desenlace">
+              <button class="chip" data-target="ta-desenlace" data-text="Finalmente, ">Finalmente...</button>
+              <button class="chip" data-target="ta-desenlace" data-text="Al final del día, ">Al final del día...</button>
+              <button class="chip" data-target="ta-desenlace" data-text="Y así fue como ">Y así fue como...</button>
+              <button class="chip" data-target="ta-desenlace" data-text="Desde ese día aprendió que ">Desde ese día...</button>
+              <button class="chip" data-target="ta-desenlace" data-text="Colorín colorado, este cuento ">Colorín colorado...</button>
+            </div>
+          </div>
+          <label class="write-label" for="ta-desenlace">Escribí el <strong>desenlace</strong> de tu cuento:</label>
+          <textarea id="ta-desenlace" class="story-area ta-desenlace" placeholder="¿Cómo terminó todo?" rows="5"></textarea>
+          <div class="word-count"><span id="wc-desenlace">0</span> palabras</div>
+        </div>
+      </section>
+
+    </div><!-- fin story-table -->
+
+    <!-- BOTONES -->
+    <div class="actions-bar">
+      <button class="btn btn-preview" onclick="showPreview()">👀 Ver mi cuento</button>
+      <button class="btn btn-clear"   onclick="clearAll()">🗑️ Borrar todo</button>
+      <button class="btn btn-send"    onclick="enviarCuento()">📤 Enviar</button>
+    </div>
+
+  </main>
+
+  <!-- MODAL PREVIEW -->
+  <div id="modal-overlay" class="modal-overlay hidden" onclick="closeModal(event)">
+    <div class="modal-box">
+      <button class="modal-close" onclick="closeModal()">✕</button>
+      <div class="modal-header">
+        <span>✨</span>
+        <h2>Mi cuento</h2>
+        <span>✨</span>
+      </div>
+      <div id="modal-elementos" class="modal-elementos"></div>
+      <div class="modal-content">
+        <div class="modal-part mp-inicio">
+          <h3>Inicio</h3>
+          <p id="mp-inicio-text"></p>
+        </div>
+        <div class="modal-part mp-conflicto">
+          <h3>Conflicto</h3>
+          <p id="mp-conflicto-text"></p>
+        </div>
+        <div class="modal-part mp-desenlace">
+          <h3>Desenlace</h3>
+          <p id="mp-desenlace-text"></p>
+        </div>
+      </div>
+      <div id="modal-empty" class="modal-empty hidden">¡Todavía no escribiste ninguna parte! Completá el cuento primero. 🖊️</div>
+      <div id="congrats" class="congrats hidden">
+        <span>🌟</span> ¡Excelente trabajo! Escribiste un cuento completo. <span>🌟</span>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

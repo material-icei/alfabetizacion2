@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Leo y marco las palabras 📖</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700;800&family=Fredoka+One&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <span class="bounce-icon">📖</span>
+    <div class="header-text">
+      <h1>Leo y marco las palabras</h1>
+      <p class="subtitle">Hacé clic en una palabra y luego en la imagen que le corresponde</p>
+    </div>
+    <span class="bounce-icon" style="animation-delay:.5s">✏️</span>
+  </div>
+</header>
+
+<div class="score-bar">
+  <div class="score-pill">
+    <span>⭐</span>
+    <span id="score-text">0 / 15 encontradas</span>
+  </div>
+  <div class="legend">
+    <span class="legend-dot word-dot"></span><span>Palabra</span>
+    <span class="legend-dot img-dot"></span><span>Imagen</span>
+  </div>
+  <button class="btn-reset" onclick="resetAll()">🔄 Reiniciar</button>
+</div>
+
+<main>
+  <!-- GRID DE IMÁGENES -->
+  <section class="images-section">
+    <div class="images-grid" id="images-grid"></div>
+  </section>
+
+  <!-- LISTA DE PALABRAS -->
+  <section class="words-section">
+    <div class="words-grid" id="words-grid"></div>
+  </section>
+</main>
+
+<!-- CELEBRACIÓN -->
+<div id="celebration" class="celebration hidden">
+  <div class="celebration-box">
+    <div class="cel-emoji">🎉</div>
+    <h2>¡Felicitaciones!</h2>
+    <p>¡Encontraste todas las palabras!</p>
+    <button class="btn-play-again" onclick="resetAll()">🔄 Jugar de nuevo</button>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
