@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>¿Qué rima con...? 🎵</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Schoolbell&family=Nunito:wght@400;600;700;800;900&family=Fredoka+One&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  <header>
+    <div class="header-inner">
+      <span class="star-icon">⭐</span>
+      <div>
+        <h1>¿Qué rima con...?</h1>
+        <p class="subtitle">Elegí la imagen que rima y escribí una oración</p>
+      </div>
+      <span class="star-icon" style="animation-delay:.7s">🎵</span>
+    </div>
+    <div class="progress-wrap">
+      <div class="progress-bar">
+        <div class="progress-fill" id="progress-fill"></div>
+      </div>
+      <span class="progress-label" id="progress-label">0 / 9</span>
+      <button class="btn-reset" onclick="resetAll()">🔄 Reiniciar</button>
+    </div>
+  </header>
+
+  <main id="cards-container"></main>
+
+  <!-- MODAL ESCRITURA -->
+  <div id="modal" class="modal hidden">
+    <div class="modal-box">
+      <div class="modal-header">
+        <span id="modal-pair-emoji"></span>
+        <h2 id="modal-title">¡Riman! ✨</h2>
+      </div>
+      <p class="modal-prompt">Ahora escribí una oración usando estas dos palabras:</p>
+      <div class="modal-words" id="modal-words"></div>
+      <textarea id="sentence-input" class="sentence-input" placeholder="Escribí tu oración aquí..." rows="3" maxlength="200"></textarea>
+      <div class="modal-actions">
+        <button class="btn-confirm" onclick="confirmSentence()">✅ Guardar oración</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- CELEBRACIÓN -->
+  <div id="celebration" class="celebration hidden">
+    <div class="celebration-box">
+      <div class="cel-emoji">🎉</div>
+      <h2>¡Felicitaciones!</h2>
+      <p>Completaste todas las rimas.</p>
+      <div class="summary" id="summary"></div>
+      <button class="btn-play-again" onclick="resetAll()">🔄 Jugar de nuevo</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
