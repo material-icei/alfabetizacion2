@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>¡Decí 3 cosas! 🎡</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800;900&family=Schoolbell&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<!-- ===== PANTALLA JUEGO ===== -->
+<div id="screen-game" class="screen active">
+
+  <header class="game-header">
+    <h1 class="game-title">🎡 ¡Decí 3 cosas!</h1>
+    <div class="score-badge">⭐ <span id="score-display">0</span> pts</div>
+  </header>
+
+  <!-- RUEDA + PANEL -->
+  <div class="wheel-area">
+
+    <!-- RUEDA -->
+    <div class="wheel-wrapper">
+      <canvas id="wheel-canvas" width="360" height="360"></canvas>
+      <div class="wheel-center-btn" onclick="spinWheel()">
+        <span id="spin-label">GIRAR</span>
+      </div>
+      <div class="wheel-arrow">▼</div>
+    </div>
+
+    <!-- PANEL RESPUESTAS -->
+    <div class="answer-panel">
+
+      <div class="category-display hidden" id="category-display">
+        <div class="category-icon" id="cat-icon">🎯</div>
+        <div class="category-text" id="cat-text"></div>
+      </div>
+
+      <div class="answers-area hidden" id="answers-area">
+        <p class="answers-label">Escribí 3 cosas:</p>
+        <div class="answer-inputs">
+          <div class="answer-row">
+            <span class="answer-num">1</span>
+            <input class="answer-input" id="ans-1" type="text" placeholder="Primera cosa..." maxlength="60"/>
+          </div>
+          <div class="answer-row">
+            <span class="answer-num">2</span>
+            <input class="answer-input" id="ans-2" type="text" placeholder="Segunda cosa..." maxlength="60"/>
+          </div>
+          <div class="answer-row">
+            <span class="answer-num">3</span>
+            <input class="answer-input" id="ans-3" type="text" placeholder="Tercera cosa..." maxlength="60"/>
+          </div>
+        </div>
+        <button class="btn-submit" onclick="submitAnswers()">✅ Listo</button>
+      </div>
+
+      <div class="placeholder-msg" id="placeholder-msg">
+        <span class="placeholder-emoji">👆</span>
+        <p>Girá la rueda para obtener una categoría</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- TABLA DE RESPUESTAS -->
+  <div class="history-section">
+    <div class="history-header">
+      <h3>📋 Mis respuestas</h3>
+      <span class="history-count" id="history-count">0 categorías</span>
+    </div>
+    <div class="table-wrap">
+      <table class="answers-table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Categoría</th>
+            <th>Cosa 1</th>
+            <th>Cosa 2</th>
+            <th>Cosa 3</th>
+          </tr>
+        </thead>
+        <tbody id="table-body">
+          <tr class="table-empty-row" id="table-empty-row">
+            <td colspan="5">Girá la rueda para empezar ✨</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- BOTÓN FINALIZAR -->
+  <div class="finish-bar">
+    <button class="btn-finish" onclick="finishGame()">🏁 Finalizar</button>
+  </div>
+
+</div>
+
+<!-- ===== PANTALLA RESULTADO ===== -->
+<div id="screen-result" class="screen hidden">
+  <div class="result-card">
+    <div class="result-trophy">🏆</div>
+    <h2>¡Muy bien!</h2>
+    <div class="result-score">
+      <span class="score-big" id="result-score">0</span>
+      <span class="score-unit">puntos</span>
+    </div>
+    <p class="result-sub" id="result-sub">Completaste 0 categorías.</p>
+    <div class="result-table-wrap">
+      <table class="answers-table result-table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Categoría</th>
+            <th>Cosa 1</th>
+            <th>Cosa 2</th>
+            <th>Cosa 3</th>
+          </tr>
+        </thead>
+        <tbody id="result-table-body"></tbody>
+      </table>
+    </div>
+    <button class="btn-play-again" onclick="playAgain()">🔄 Jugar de nuevo</button>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
