@@ -10,7 +10,7 @@ var WORDS = [
   { a: 'lu', b: 'na', word: 'luna',  emoji: '🌙', hint: 'luna' },
   { a: 'da', b: 'do', word: 'dado',  emoji: '🎲', hint: 'dado' },
   { a: 'ni', b: 'ño', word: 'niño',  emoji: '👦', hint: 'niño' },
-  { a: 'fo', b: 'ca', word: 'foca',  emoji: '🦭', hint: 'foca' },
+  { a: 'ca', b: 'sa', word: 'casa',  emoji: '🏠', hint: 'casa' },
   { a: 'sa', b: 'po', word: 'sapo',  emoji: '🐸', hint: 'sapo' },
   { a: 'so', b: 'pa', word: 'sopa',  emoji: '🍲', hint: 'sopa' },
   { a: 'pe', b: 'ra', word: 'pera',  emoji: '🍐', hint: 'pera' },

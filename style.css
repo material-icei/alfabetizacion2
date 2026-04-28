@@ -1,0 +1,84 @@
+:root {
+    --yellow: #FFD166;
+    --blue: #118AB2;
+    --green: #06D6A0;
+    --pink: #EF476F;
+    --orange: #F78C6B;
+    --purple: #8338EC;
+}
+
+body {
+    background-color: #f0f9ff;
+    font-family: 'Fredoka One', cursive;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+header {
+    text-align: center;
+    margin-top: 30px;
+    color: #264653;
+}
+
+h1 { font-size: 3rem; text-shadow: 3px 3px #fff; }
+
+.menu-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 25px;
+    padding: 40px;
+    width: 90%;
+    max-width: 1000px;
+}
+
+/* Tarjetas de Juego */
+.game-card {
+    border: none;
+    border-radius: 25px;
+    padding: 30px;
+    font-size: 1.2rem;
+    font-family: inherit;
+    cursor: pointer;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s;
+    box-shadow: 0 10px 0px rgba(0,0,0,0.1);
+    position: relative;
+}
+
+.game-card:hover {
+    transform: scale(1.1) rotate(2deg);
+    box-shadow: 0 15px 20px rgba(0,0,0,0.15);
+}
+
+.game-card:active {
+    transform: scale(0.95);
+}
+
+.icon {
+    font-size: 3.5rem;
+    margin-bottom: 15px;
+}
+
+/* Colores específicos con bordes inferiores para efecto 3D */
+.card-yellow { background: var(--yellow); border-bottom: 8px solid #e5bc5c; color: #5e4a1a; }
+.card-blue { background: var(--blue); border-bottom: 8px solid #0e6d8d; }
+.card-green { background: var(--green); border-bottom: 8px solid #05a67c; }
+.card-pink { background: var(--pink); border-bottom: 8px solid #bc3858; }
+.card-orange { background: var(--orange); border-bottom: 8px solid #c97257; }
+.card-purple { background: var(--purple); border-bottom: 8px solid #662bb9; }
+
+/* Animación de flotación suave */
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+.game-card:nth-child(odd) { animation: float 4s ease-in-out infinite; }
+.game-card:nth-child(even) { animation: float 4s ease-in-out infinite 1s; }
