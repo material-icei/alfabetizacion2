@@ -3,7 +3,7 @@
 // =============================================
 
 var WORDS = [
-  { a: 'pa',  b: 'lo',  c: 'ma',  word: 'paloma',   emoji: '🕊️',  hint: 'paloma'   },
+   { a: 'pa',  b: 'lo',  c: 'ma',  word: 'paloma',   emoji: '🕊️',  hint: 'paloma'   },
   { a: 'za',  b: 'pa',  c: 'to',  word: 'zapato',   emoji: '👟',  hint: 'zapato'   },
   { a: 'pai',  b: 'sa',  c: 'je',  word: 'paisaje',   emoji: '🏜️',  hint: 'paisaje'   },
   { a: 'to',  b: 'ma',  c: 'te',  word: 'tomate',   emoji: '🍅',  hint: 'tomate'   },
@@ -11,17 +11,18 @@ var WORDS = [
   { a: 'pe',  b: 'pi',  c: 'no',  word: 'pepino',   emoji: '🥒',  hint: 'pepino'   },
   { a: 'co',  b: 'ro',  c: 'na',  word: 'corona',   emoji: '👑',  hint: 'corona'   },
   { a: 'bo',  b: 'te',  c: 'lla', word: 'botella',  emoji: '🍾',  hint: 'botella'  },
-  { a: 'mar',  b: 'cia',  c: 'no',  word: 'marciano',   emoji: '👽',  hint: 'marciano'   },
   { a: 'ca',  b: 'ba',  c: 'llo', word: 'caballo',  emoji: '🐴',  hint: 'caballo'  },
   { a: 'ga',  b: 'lle',  c: 'ta',  word: 'galleta',   emoji: '🍪',  hint: 'galleta'   },
-  { a: 'ba',  b: 'na',  c: 'na',  word: 'banana',   emoji: '🍌',  hint: 'banana'   },
   { a: 'cá',  b: 'ma',  c: 'ra',  word: 'cámara',   emoji: '📷',  hint: 'cámara'   },
   { a: 'sa',  b: 'xo',  c: 'fón',  word: 'saxofón',   emoji: '🎷',  hint: 'saxofón'   },
   { a: 'mu',  b: 'ñe',  c: 'ca',  word: 'muñeca',   emoji: '🪆',  hint: 'muñeca'   },
   { a: 'pi',  b: 'za',  c: 'rra', word: 'pizarra',  emoji: '📋',  hint: 'pizarra'  },
-  { a: 'sa',  b: 'li',  c: 'da',  word: 'salida',   emoji: '🚪',  hint: 'salida'   },
-  { a: 'fo',  b: 'ga',  c: 'ta',  word: 'fogata',   emoji: '🔥',  hint: 'fogata'    },
   { a: 'a',  b: 'plau',  c: 'so',  word: 'aplauso',   emoji: '👏',  hint: 'aplauso'   },
+  { a: 'ser',  b: 'pien',  c: 'tes',  word: 'serpientes',   emoji: '🐍🐍',  hint: 'serpientes'   }, 
+  { a: 'o',  b: 've',  c: 'ja',  word: 'oveja',   emoji: '🐑',  hint: 'oveja'   },
+  { a: 'ji',  b: 'ra',  c: 'fa',  word: 'jirafa',   emoji: '🦒',  hint: 'jirafa'   }, 
+  { a: 'ko',  b: 'a',  c: 'la',  word: 'koala',   emoji: '🐨',  hint: 'koala'   },
+  { a: 'ves',  b: 'ti',  c: 'do',  word: 'vestido',   emoji: '👗',  hint: 'vestido'   },
 ];
 
 var selectedA   = null;
