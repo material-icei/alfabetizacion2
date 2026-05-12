@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ordenar alfabéticamente ✏️</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <span class="hdr-icon">🔤</span>
+    <div>
+      <h1>Orden alfabético</h1>
+      <p class="subtitle">Arrastrá cada palabra al lugar que le corresponde (de la A a la Z)</p>
+    </div>
+    <span class="hdr-icon" style="animation-delay:.6s">✏️</span>
+  </div>
+  <div class="progress-wrap">
+    <div class="progress-bar"><div class="progress-fill" id="progress-fill"></div></div>
+    <span class="progress-label" id="progress-label">0 / 12</span>
+  </div>
+</header>
+
+<div class="score-bar">
+  <button class="btn-check" onclick="checkAll()">✅ Verificar</button>
+  <button class="btn-reset" onclick="resetAll()">🔄 Reiniciar</button>
+</div>
+
+<main>
+  <div class="activity-layout">
+
+    <!-- COLUMNA IZQUIERDA: slots numerados -->
+    <div class="col-slots">
+      <div class="col-title">Orden alfabético</div>
+      <div id="number-slots"></div>
+    </div>
+
+    <!-- COLUMNA DERECHA: banco de palabras -->
+    <div class="col-words" id="col-words">
+      <div class="col-title">Palabras</div>
+      <div class="word-bank" id="word-list"></div>
+    </div>
+
+  </div>
+
+  <p class="hint-text" id="hint-text"></p>
+</main>
+
+<!-- CELEBRACIÓN -->
+<div id="celebration" class="celebration hidden">
+  <div class="celebration-box">
+    <div class="cel-emoji">🏆</div>
+    <h2>¡Felicitaciones!</h2>
+    <p>Ordenaste todas las palabras correctamente.</p>
+    <button class="btn-play-again" onclick="resetAll()">🔄 Intentar de nuevo</button>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
