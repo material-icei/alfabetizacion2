@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ordenar letras 🔤</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <span class="hdr-icon">🔤</span>
+    <div>
+      <h1>Ordená las letras</h1>
+      <p class="subtitle">Empezando por la letra naranja, formá la palabra</p>
+    </div>
+    <span class="hdr-icon" style="animation-delay:.5s">💡</span>
+  </div>
+  <!-- Indicador de tarjeta -->
+  <div class="card-nav" id="card-nav"></div>
+</header>
+
+<main>
+  <div class="card-wrapper">
+
+    <!-- Número de tarjeta -->
+    <div class="card-number" id="card-number">1</div>
+
+    <!-- Letras revueltas -->
+    <div class="letters-area" id="letters-area"></div>
+
+    <!-- Slots para armar la palabra -->
+    <div class="slots-area" id="slots-area"></div>
+
+    <!-- Feedback -->
+    <div class="feedback hidden" id="feedback"></div>
+
+    <!-- Botones -->
+    <div class="btn-row">
+      <button class="btn-verify" onclick="verify()">✅ Verificar</button>
+      <button class="btn-clear"  onclick="clearSlots()">🔄 Limpiar</button>
+    </div>
+
+  </div>
+
+  <!-- Navegación -->
+  <div class="nav-row">
+    <button class="btn-nav" id="btn-prev" onclick="prevCard()">◀ Anterior</button>
+    <button class="btn-nav btn-next-card" id="btn-next" onclick="nextCard()">Siguiente ▶</button>
+  </div>
+</main>
+
+<!-- CELEBRACIÓN TARJETA -->
+<div id="toast" class="toast hidden">🎉 ¡Correcto!</div>
+
+<!-- CELEBRACIÓN FINAL -->
+<div id="modal-final" class="modal hidden">
+  <div class="modal-box">
+    <div class="m-emoji">🏆</div>
+    <h2>¡Felicitaciones!</h2>
+    <p>Ordenaste todas las palabras correctamente.</p>
+    <button class="btn-verify" onclick="restart()">🔄 Jugar de nuevo</button>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

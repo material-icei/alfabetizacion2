@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Leo y emparejo 📖</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <span class="hdr-icon">📖</span>
+    <div>
+      <h1>Leo y emparejo</h1>
+      <p class="subtitle">Hacé clic en una imagen y luego en la oración que le corresponde</p>
+    </div>
+    <span class="hdr-icon" style="animation-delay:.5s">🖼️</span>
+  </div>
+  <div class="progress-wrap">
+    <div class="progress-bar"><div class="progress-fill" id="progress-fill"></div></div>
+    <span class="progress-label" id="progress-label">0 / 6</span>
+    <button class="btn-reset" onclick="restartAll()" title="Reiniciar">🔄</button>
+  </div>
+</header>
+
+<main>
+
+  <!-- SECCIÓN IMÁGENES -->
+  <div class="section-label">🖼️ Imágenes</div>
+  <div class="card-grid" id="grid-images"></div>
+
+  <!-- SECCIÓN ORACIONES -->
+  <div class="section-label">✏️ Oraciones</div>
+  <div class="card-grid" id="grid-sentences"></div>
+
+</main>
+
+<!-- CELEBRACIÓN -->
+<div id="modal-final" class="modal hidden">
+  <div class="modal-box">
+    <div class="m-emoji">🏆</div>
+    <h2>¡Felicitaciones!</h2>
+    <p>Emparejaste todas las imágenes con su oración.</p>
+    <div class="stars-row">⭐ ⭐ ⭐</div>
+    <button class="btn-play-again" onclick="restartAll()">🔄 Jugar de nuevo</button>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
